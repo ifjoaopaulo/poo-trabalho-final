@@ -26,13 +26,13 @@ API desenvolvida em NestJS, usada para gravar pedidos detalhados (com dados do c
 
 - Clientes
   - Listar todos clientes cadastrados [GET()]
-  - Buscar cliente por CPF [GET(':cpf')]
+  - Buscar cliente por id [GET(':id')]
   - Cadastrar novo cliente [POST()]
-  - Remover cliente por CPF [DELETE(':cpf')]
+  - Remover cliente por id [DELETE(':id')]
  
 - Pedidos
   - Listar todos pedidos [GET()]
-  - Buscar pedidos por CPF do cliente [GET('cliente/:cpf')]
+  - Buscar pedidos por id do cliente [GET('cliente/:id')]
   - Buscar pedidos por id de um produto [GET('produtos/:id')]
   - Lançar novo pedido [POST()]
 
