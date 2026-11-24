@@ -3,18 +3,16 @@ import { Repository, In, DeepPartial } from 'typeorm';
 import { CriarPedidoDto } from './dto/criar-pedido.dto';
 import { Pedido } from './pedido.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import type { ClienteContract } from 'src/clientes/clientes.contract';
-import type { ProdutosContract } from 'src/produtos/produtos.contract';
-import { Produto } from 'src/produtos/produto.entity';
+import { type ClienteContract, CLIENTE_CONTRACT } from 'src/clientes/clientes.contract';
+import { type ProdutosContract, PRODUTOS_CONTRACT } from 'src/produtos/produtos.contract';
 import { ItemPedido } from './itemPedido.entity';
-
 
 @Injectable()
 export class PedidosService {
   constructor(
     @InjectRepository(Pedido) private readonly pedidoRepositorio: Repository<Pedido>,
-    @Inject('CLIENTE_CONTRACT') private readonly clienteContrato: ClienteContract,
-    @Inject('PRODUTO_CONTRACT') private readonly produtoContrato: ProdutosContract,
+    @Inject(CLIENTE_CONTRACT) private readonly clienteContrato: ClienteContract,
+    @Inject(PRODUTOS_CONTRACT) private readonly produtoContrato: ProdutosContract,
   ) { }
 
   async criar(dto: CriarPedidoDto): Promise<Pedido> {
