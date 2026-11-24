@@ -1,15 +1,16 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
-import { CriarClienteDto } from './dto/criar-cliente.dto';
-import { Cliente } from './cliente.entity';
-import { ClienteContract } from './clientes.contract';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Injectable, NotFoundException } from "@nestjs/common";
+import { CriarClienteDto } from "./dto/criar-cliente.dto";
+import { Cliente } from "./cliente.entity";
+import { ClienteContract } from "./clientes.contract";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Repository } from "typeorm";
 
 @Injectable()
 export class ClientesService implements ClienteContract {
   constructor(
-    @InjectRepository(Cliente) private readonly clienteRepositorio: Repository<Cliente>,
-  ) { };
+    @InjectRepository(Cliente)
+    private readonly clienteRepositorio: Repository<Cliente>,
+  ) {}
 
   async criar(dto: CriarClienteDto): Promise<Cliente> {
     const cliente = this.clienteRepositorio.create(dto);
@@ -37,7 +38,7 @@ export class ClientesService implements ClienteContract {
   }
 
   async existe(idCliente: number): Promise<boolean> {
-    const cliente = await this.clienteRepositorio.findOneBy({ id: idCliente })
+    const cliente = await this.clienteRepositorio.findOneBy({ id: idCliente });
 
     return cliente !== null;
   }

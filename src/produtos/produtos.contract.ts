@@ -6,4 +6,4 @@ export interface ProdutosContract {
   listarExistentes(ids: number[]): Promise<Produto[]>;
 }
 
-export const PRODUTOS_CONTRACT = Symbol('PRODUTOS_CONTRACT');
+export const PRODUTOS_CONTRACT = Symbol("PRODUTOS_CONTRACT");

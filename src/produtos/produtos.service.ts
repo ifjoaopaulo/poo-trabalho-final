@@ -1,16 +1,16 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
-import { CriarProdutoDto } from './dto/criar-produto.dto';
-import { Produto } from './produto.entity';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, In } from 'typeorm';
-import { ProdutosContract } from './produtos.contract';
-
+import { Injectable, NotFoundException } from "@nestjs/common";
+import { CriarProdutoDto } from "./dto/criar-produto.dto";
+import { Produto } from "./produto.entity";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Repository, In } from "typeorm";
+import { ProdutosContract } from "./produtos.contract";
 
 @Injectable()
 export class ProdutosService implements ProdutosContract {
   constructor(
-    @InjectRepository(Produto) private readonly produtoRepositorio: Repository<Produto>
-  ) { };
+    @InjectRepository(Produto)
+    private readonly produtoRepositorio: Repository<Produto>,
+  ) {}
 
   async criar(dto: CriarProdutoDto): Promise<Produto> {
     const produto = this.produtoRepositorio.create(dto);
@@ -47,7 +47,9 @@ export class ProdutosService implements ProdutosContract {
     if (ids.length === 0) {
       return [];
     }
-    const lista = await this.produtoRepositorio.find({ where: { id: In(ids) } })
+    const lista = await this.produtoRepositorio.find({
+      where: { id: In(ids) },
+    });
 
     return lista;
   }

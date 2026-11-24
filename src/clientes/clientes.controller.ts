@@ -1,10 +1,18 @@
-import { Body, Controller, Get, Param, Delete, Post, ParseIntPipe } from '@nestjs/common';
-import { ClientesService } from './clientes.service';
-import { CriarClienteDto } from './dto/criar-cliente.dto';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Delete,
+  Post,
+  ParseIntPipe,
+} from "@nestjs/common";
+import { ClientesService } from "./clientes.service";
+import { CriarClienteDto } from "./dto/criar-cliente.dto";
 
-@Controller('clientes')
+@Controller("clientes")
 export class ClientesController {
-  constructor(private readonly service: ClientesService) { }
+  constructor(private readonly service: ClientesService) {}
 
   @Post()
   criar(@Body() body: CriarClienteDto) {
@@ -16,13 +24,13 @@ export class ClientesController {
     return this.service.listar();
   }
 
-  @Get(':id')
-  buscar(@Param('id', ParseIntPipe) id: number) {
+  @Get(":id")
+  buscar(@Param("id", ParseIntPipe) id: number) {
     return this.service.buscar(id);
   }
 
-  @Delete(':id')
-  remover(@Param('id', ParseIntPipe) id: number) {
+  @Delete(":id")
+  remover(@Param("id", ParseIntPipe) id: number) {
     return this.service.remover(id);
   }
 }
