@@ -1,12 +1,13 @@
-import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, ParseIntPipe } from '@nestjs/common';
 import { ProdutosService } from './produtos.service';
+import { CriarProdutoDto } from './dto/criar-produto.dto';
 
 @Controller('produtos')
 export class ProdutosController {
-  constructor(private readonly service: ProdutosService) {}
+  constructor(private readonly service: ProdutosService) { }
 
   @Post()
-  criar(@Body() body: any) {
+  criar(@Body() body: CriarProdutoDto) {
     return this.service.criar(body);
   }
 
@@ -20,8 +21,8 @@ export class ProdutosController {
     return this.service.buscar(Number(id));
   }
 
-  @Patch(':id')
-  atualizar(@Param('id') id: string, @Body() body: any) {
-    return this.service.atualizar(Number(id), body);
+  @Delete(':id')
+  remover(@Param('id', ParseIntPipe) id: number) {
+    return this.service.remover(id);
   }
 }
