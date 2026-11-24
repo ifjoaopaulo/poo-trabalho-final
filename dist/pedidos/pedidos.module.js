@@ -20,9 +20,13 @@ let PedidosModule = class PedidosModule {
 exports.PedidosModule = PedidosModule;
 exports.PedidosModule = PedidosModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([pedido_entity_1.Pedido, itemPedido_entity_1.ItemPedido]), clientes_module_1.ClientesModule, produtos_module_1.ProdutosModule],
+        imports: [
+            typeorm_1.TypeOrmModule.forFeature([pedido_entity_1.Pedido, itemPedido_entity_1.ItemPedido]),
+            clientes_module_1.ClientesModule,
+            produtos_module_1.ProdutosModule,
+        ],
         controllers: [pedidos_controller_1.PedidosController],
-        providers: [pedidos_service_1.PedidosService]
+        providers: [pedidos_service_1.PedidosService],
     })
 ], PedidosModule);
 //# sourceMappingURL=pedidos.module.js.map

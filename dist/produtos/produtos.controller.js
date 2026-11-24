@@ -49,21 +49,21 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], ProdutosController.prototype, "listar", null);
 __decorate([
-    (0, common_1.Get)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Get)(":id"),
+    __param(0, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], ProdutosController.prototype, "buscar", null);
 __decorate([
-    (0, common_1.Delete)(':id'),
-    __param(0, (0, common_1.Param)('id', common_1.ParseIntPipe)),
+    (0, common_1.Delete)(":id"),
+    __param(0, (0, common_1.Param)("id", common_1.ParseIntPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
 ], ProdutosController.prototype, "remover", null);
 exports.ProdutosController = ProdutosController = __decorate([
-    (0, common_1.Controller)('produtos'),
+    (0, common_1.Controller)("produtos"),
     __metadata("design:paramtypes", [produtos_service_1.ProdutosService])
 ], ProdutosController);
 //# sourceMappingURL=produtos.controller.js.map

@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, DeleteDateColumn } from "typeorm";
 
 @Entity("produtos")
 export class Produto {
@@ -13,4 +13,7 @@ export class Produto {
 
   @Column({ type: "numeric", precision: 10, scale: 2, nullable: false })
   preco: number;
+
+  @DeleteDateColumn()
+  apagadoEm: Date | null;
 }

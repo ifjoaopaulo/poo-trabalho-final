@@ -49,21 +49,21 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], ClientesController.prototype, "listar", null);
 __decorate([
-    (0, common_1.Get)(':id'),
-    __param(0, (0, common_1.Param)('id', common_1.ParseIntPipe)),
+    (0, common_1.Get)(":id"),
+    __param(0, (0, common_1.Param)("id", common_1.ParseIntPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
 ], ClientesController.prototype, "buscar", null);
 __decorate([
-    (0, common_1.Delete)(':id'),
-    __param(0, (0, common_1.Param)('id', common_1.ParseIntPipe)),
+    (0, common_1.Delete)(":id"),
+    __param(0, (0, common_1.Param)("id", common_1.ParseIntPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
 ], ClientesController.prototype, "remover", null);
 exports.ClientesController = ClientesController = __decorate([
-    (0, common_1.Controller)('clientes'),
+    (0, common_1.Controller)("clientes"),
     __metadata("design:paramtypes", [clientes_service_1.ClientesService])
 ], ClientesController);
 //# sourceMappingURL=clientes.controller.js.map

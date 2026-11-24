@@ -49,21 +49,21 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], PedidosController.prototype, "listar", null);
 __decorate([
-    (0, common_1.Get)('clientes/:id'),
-    __param(0, (0, common_1.Param)('id', common_1.ParseIntPipe)),
+    (0, common_1.Get)("clientes/:id"),
+    __param(0, (0, common_1.Param)("id", common_1.ParseIntPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], PedidosController.prototype, "buscarPorCliente", null);
 __decorate([
-    (0, common_1.Get)('produtos/:id'),
-    __param(0, (0, common_1.Param)('id', common_1.ParseIntPipe)),
+    (0, common_1.Get)("produtos/:id"),
+    __param(0, (0, common_1.Param)("id", common_1.ParseIntPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], PedidosController.prototype, "buscarPorProduto", null);
 exports.PedidosController = PedidosController = __decorate([
-    (0, common_1.Controller)('pedidos'),
+    (0, common_1.Controller)("pedidos"),
     __metadata("design:paramtypes", [pedidos_service_1.PedidosService])
 ], PedidosController);
 //# sourceMappingURL=pedidos.controller.js.map

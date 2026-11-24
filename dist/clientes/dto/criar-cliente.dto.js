@@ -19,13 +19,13 @@ exports.CriarClienteDto = CriarClienteDto;
 __decorate([
     (0, class_validator_1.IsNumberString)(),
     (0, class_validator_1.IsNotEmpty)(),
-    (0, class_validator_1.MaxLength)(11, { message: 'O CPF deve ter 11 digitos (somente números).' }),
+    (0, class_validator_1.MaxLength)(11, { message: "O CPF deve ter 11 digitos (somente números)." }),
     __metadata("design:type", String)
 ], CriarClienteDto.prototype, "cpf", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
-    (0, class_validator_1.MaxLength)(100, { message: 'O nome deve ter no máximo 100 caractéres.' }),
+    (0, class_validator_1.MaxLength)(100, { message: "O nome deve ter no máximo 100 caractéres." }),
     __metadata("design:type", String)
 ], CriarClienteDto.prototype, "nome", void 0);
 //# sourceMappingURL=criar-cliente.dto.js.map

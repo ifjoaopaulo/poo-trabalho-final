@@ -3,4 +3,5 @@ export declare class Produto {
     nome: string;
     descricao: string;
     preco: number;
+    apagadoEm: Date | null;
 }

@@ -20,7 +20,12 @@ let AppModule = class AppModule {
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forRoot(banco_1.opcoesBanco), produtos_module_1.ProdutosModule, clientes_module_1.ClientesModule, pedidos_module_1.PedidosModule],
+        imports: [
+            typeorm_1.TypeOrmModule.forRoot(banco_1.opcoesBanco),
+            produtos_module_1.ProdutosModule,
+            clientes_module_1.ClientesModule,
+            pedidos_module_1.PedidosModule,
+        ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })

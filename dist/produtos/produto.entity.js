@@ -16,25 +16,30 @@ let Produto = class Produto {
     nome;
     descricao;
     preco;
+    apagadoEm;
 };
 exports.Produto = Produto;
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)('increment'),
+    (0, typeorm_1.PrimaryGeneratedColumn)("increment"),
     __metadata("design:type", Number)
 ], Produto.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: 'varchar', length: 50, nullable: false }),
+    (0, typeorm_1.Column)({ type: "varchar", length: 50, nullable: false }),
     __metadata("design:type", String)
 ], Produto.prototype, "nome", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: 'varchar', length: 100, nullable: true }),
+    (0, typeorm_1.Column)({ type: "varchar", length: 100, nullable: true }),
     __metadata("design:type", String)
 ], Produto.prototype, "descricao", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: 'numeric', precision: 10, scale: 2, nullable: false }),
+    (0, typeorm_1.Column)({ type: "numeric", precision: 10, scale: 2, nullable: false }),
     __metadata("design:type", Number)
 ], Produto.prototype, "preco", void 0);
+__decorate([
+    (0, typeorm_1.DeleteDateColumn)(),
+    __metadata("design:type", Object)
+], Produto.prototype, "apagadoEm", void 0);
 exports.Produto = Produto = __decorate([
-    (0, typeorm_1.Entity)('produtos')
+    (0, typeorm_1.Entity)("produtos")
 ], Produto);
 //# sourceMappingURL=produto.entity.js.map

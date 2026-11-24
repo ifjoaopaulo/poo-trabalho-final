@@ -29,15 +29,15 @@ let PedidosService = class PedidosService {
         this.produtoContrato = produtoContrato;
     }
     async criar(dto) {
-        if (!await this.clienteContrato.existe(dto.idCliente)) {
+        if (!(await this.clienteContrato.existe(dto.idCliente))) {
             throw new common_1.NotFoundException(`Cliente de id ${dto.idCliente} não existe.`);
         }
         const listaProdutos = dto.itens.map((item) => item.idProduto);
         const produtosExistentes = await this.produtoContrato.listarExistentes(listaProdutos);
-        const produtosMap = new Map(produtosExistentes.map(obj => [obj.id, obj]));
+        const produtosMap = new Map(produtosExistentes.map((obj) => [obj.id, obj]));
         const listaInexistentes = listaProdutos.filter((id) => !produtosMap.has(id));
         if (listaInexistentes.length > 0) {
-            throw new common_1.NotFoundException(`Itens de id(s) ${listaInexistentes.join(', ')} não existem.`);
+            throw new common_1.NotFoundException(`Itens de id(s) ${listaInexistentes.join(", ")} não existem.`);
         }
         const itens = [];
         let valor = 0;
@@ -51,20 +51,26 @@ let PedidosService = class PedidosService {
             });
             valor += preco * i.quantidade;
         }
-        const pedido = { cliente: { id: dto.idCliente }, itens, valor: Number(valor.toFixed(2)) };
+        const pedido = {
+            cliente: { id: dto.idCliente },
+            itens,
+            valor: Number(valor.toFixed(2)),
+        };
         return await this.pedidoRepositorio.save(pedido);
     }
     async listar() {
         return await this.pedidoRepositorio.find();
     }
     async buscarPorCliente(id) {
-        const resultado = await this.pedidoRepositorio.find({ where: { cliente: { id } } });
+        const resultado = await this.pedidoRepositorio.find({
+            where: { cliente: { id } },
+        });
         return resultado;
     }
     async buscarPorProduto(id) {
         const filtro = await this.pedidoRepositorio.find({
             select: { id: true },
-            where: { itens: { produto: { id } } }
+            where: { itens: { produto: { id } } },
         });
         const listaIds = filtro.map((pedido) => pedido.id);
         if (listaIds.length === 0) {
@@ -72,7 +78,7 @@ let PedidosService = class PedidosService {
         }
         const resultado = await this.pedidoRepositorio.find({
             where: { id: (0, typeorm_1.In)(listaIds) },
-            relations: { itens: true }
+            relations: { itens: true },
         });
         return resultado;
     }

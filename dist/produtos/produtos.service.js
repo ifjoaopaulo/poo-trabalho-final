@@ -22,7 +22,6 @@ let ProdutosService = class ProdutosService {
     constructor(produtoRepositorio) {
         this.produtoRepositorio = produtoRepositorio;
     }
-    ;
     async criar(dto) {
         const produto = this.produtoRepositorio.create(dto);
         return this.produtoRepositorio.save(produto);
@@ -50,7 +49,9 @@ let ProdutosService = class ProdutosService {
         if (ids.length === 0) {
             return [];
         }
-        const lista = await this.produtoRepositorio.find({ where: { id: (0, typeorm_2.In)(ids) } });
+        const lista = await this.produtoRepositorio.find({
+            where: { id: (0, typeorm_2.In)(ids) },
+        });
         return lista;
     }
 };

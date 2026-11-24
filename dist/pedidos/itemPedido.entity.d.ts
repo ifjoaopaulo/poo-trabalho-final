@@ -1,5 +1,5 @@
-import { Pedido } from './pedido.entity';
-import { Produto } from '../produtos/produto.entity';
+import { Pedido } from "./pedido.entity";
+import { Produto } from "../produtos/produto.entity";
 export declare class ItemPedido {
     id: number;
     pedido: Pedido;

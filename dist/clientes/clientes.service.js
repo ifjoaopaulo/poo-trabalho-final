@@ -22,7 +22,6 @@ let ClientesService = class ClientesService {
     constructor(clienteRepositorio) {
         this.clienteRepositorio = clienteRepositorio;
     }
-    ;
     async criar(dto) {
         const cliente = this.clienteRepositorio.create(dto);
         return await this.clienteRepositorio.save(cliente);

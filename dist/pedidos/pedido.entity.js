@@ -21,12 +21,12 @@ let Pedido = class Pedido {
 };
 exports.Pedido = Pedido;
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)('increment'),
+    (0, typeorm_1.PrimaryGeneratedColumn)("increment"),
     __metadata("design:type", Number)
 ], Pedido.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => cliente_entity_1.Cliente, { nullable: false }),
-    (0, typeorm_1.JoinColumn)({ name: 'idCliente' }),
+    (0, typeorm_1.JoinColumn)({ name: "idCliente" }),
     __metadata("design:type", cliente_entity_1.Cliente)
 ], Pedido.prototype, "cliente", void 0);
 __decorate([
@@ -34,10 +34,10 @@ __decorate([
     __metadata("design:type", Array)
 ], Pedido.prototype, "itens", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: 'numeric', precision: 10, scale: 2, nullable: false }),
+    (0, typeorm_1.Column)({ type: "numeric", precision: 10, scale: 2, nullable: false }),
     __metadata("design:type", Number)
 ], Pedido.prototype, "valor", void 0);
 exports.Pedido = Pedido = __decorate([
-    (0, typeorm_1.Entity)('pedidos')
+    (0, typeorm_1.Entity)("pedidos")
 ], Pedido);
 //# sourceMappingURL=pedido.entity.js.map

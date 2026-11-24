@@ -1,6 +1,6 @@
-import { Repository } from 'typeorm';
-import { CriarPedidoDto } from './dto/criar-pedido.dto';
-import { Pedido } from './pedido.entity';
+import { Repository } from "typeorm";
+import { CriarPedidoDto } from "./dto/criar-pedido.dto";
+import { Pedido } from "./pedido.entity";
 import { type ClienteContract } from "../clientes/clientes.contract";
 import { type ProdutosContract } from "../produtos/produtos.contract";
 export declare class PedidosService {

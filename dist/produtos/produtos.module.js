@@ -20,7 +20,10 @@ exports.ProdutosModule = ProdutosModule = __decorate([
     (0, common_1.Module)({
         imports: [typeorm_1.TypeOrmModule.forFeature([produto_entity_1.Produto])],
         controllers: [produtos_controller_1.ProdutosController],
-        providers: [produtos_service_1.ProdutosService, { provide: produtos_contract_1.PRODUTOS_CONTRACT, useExisting: produtos_service_1.ProdutosService }],
+        providers: [
+            produtos_service_1.ProdutosService,
+            { provide: produtos_contract_1.PRODUTOS_CONTRACT, useExisting: produtos_service_1.ProdutosService },
+        ],
         exports: [produtos_contract_1.PRODUTOS_CONTRACT],
     })
 ], ProdutosModule);

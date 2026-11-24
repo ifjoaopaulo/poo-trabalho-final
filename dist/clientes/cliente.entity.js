@@ -19,15 +19,15 @@ let Cliente = class Cliente {
 };
 exports.Cliente = Cliente;
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)('increment'),
+    (0, typeorm_1.PrimaryGeneratedColumn)("increment"),
     __metadata("design:type", Number)
 ], Cliente.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: 'varchar', length: 11, nullable: false }),
+    (0, typeorm_1.Column)({ type: "varchar", length: 11, nullable: false }),
     __metadata("design:type", String)
 ], Cliente.prototype, "cpf", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: 'varchar', length: 100, nullable: false }),
+    (0, typeorm_1.Column)({ type: "varchar", length: 100, nullable: false }),
     __metadata("design:type", String)
 ], Cliente.prototype, "nome", void 0);
 __decorate([
@@ -35,6 +35,6 @@ __decorate([
     __metadata("design:type", Object)
 ], Cliente.prototype, "apagadoEm", void 0);
 exports.Cliente = Cliente = __decorate([
-    (0, typeorm_1.Entity)('clientes')
+    (0, typeorm_1.Entity)("clientes")
 ], Cliente);
 //# sourceMappingURL=cliente.entity.js.map

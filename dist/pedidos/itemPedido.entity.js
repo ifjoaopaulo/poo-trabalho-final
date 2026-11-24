@@ -22,28 +22,31 @@ let ItemPedido = class ItemPedido {
 };
 exports.ItemPedido = ItemPedido;
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)('increment'),
+    (0, typeorm_1.PrimaryGeneratedColumn)("increment"),
     __metadata("design:type", Number)
 ], ItemPedido.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => pedido_entity_1.Pedido, (pedido) => pedido.itens, { onDelete: 'CASCADE', nullable: false }),
-    (0, typeorm_1.JoinColumn)({ name: 'idPedido' }),
+    (0, typeorm_1.ManyToOne)(() => pedido_entity_1.Pedido, (pedido) => pedido.itens, {
+        onDelete: "CASCADE",
+        nullable: false,
+    }),
+    (0, typeorm_1.JoinColumn)({ name: "idPedido" }),
     __metadata("design:type", pedido_entity_1.Pedido)
 ], ItemPedido.prototype, "pedido", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => produto_entity_1.Produto, { nullable: false }),
-    (0, typeorm_1.JoinColumn)({ name: 'idProduto' }),
+    (0, typeorm_1.JoinColumn)({ name: "idProduto" }),
     __metadata("design:type", produto_entity_1.Produto)
 ], ItemPedido.prototype, "produto", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: 'integer', nullable: false }),
+    (0, typeorm_1.Column)({ type: "integer", nullable: false }),
     __metadata("design:type", Number)
 ], ItemPedido.prototype, "quantidade", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: 'numeric', precision: 10, scale: 2, nullable: false }),
+    (0, typeorm_1.Column)({ type: "numeric", precision: 10, scale: 2, nullable: false }),
     __metadata("design:type", Number)
 ], ItemPedido.prototype, "precoUnitario", void 0);
 exports.ItemPedido = ItemPedido = __decorate([
-    (0, typeorm_1.Entity)('itens_pedido')
+    (0, typeorm_1.Entity)("itens_pedido")
 ], ItemPedido);
 //# sourceMappingURL=itemPedido.entity.js.map

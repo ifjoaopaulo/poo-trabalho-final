@@ -1,5 +1,5 @@
-import { ProdutosService } from './produtos.service';
-import { CriarProdutoDto } from './dto/criar-produto.dto';
+import { ProdutosService } from "./produtos.service";
+import { CriarProdutoDto } from "./dto/criar-produto.dto";
 export declare class ProdutosController {
     private readonly service;
     constructor(service: ProdutosService);
