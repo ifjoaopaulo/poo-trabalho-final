@@ -1,9 +1,9 @@
-import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Delete, Post, ParseIntPipe } from '@nestjs/common';
 import { ClientesService } from './clientes.service';
 
 @Controller('clientes')
 export class ClientesController {
-  constructor(private readonly service: ClientesService) {}
+  constructor(private readonly service: ClientesService) { }
 
   @Post()
   criar(@Body() body: any) {
@@ -16,12 +16,12 @@ export class ClientesController {
   }
 
   @Get(':id')
-  buscar(@Param('id') id: string) {
-    return this.service.buscar(Number(id));
+  buscar(@Param('id', ParseIntPipe) id: number) {
+    return this.service.buscar(id);
   }
 
-  @Patch(':id')
-  atualizar(@Param('id') id: string, @Body() body: any) {
-    return this.service.atualizar(Number(id), body);
+  @Delete(':id')
+  remover(@Param('id', ParseIntPipe) id: number) {
+    return this.service.remover(id);
   }
 }
