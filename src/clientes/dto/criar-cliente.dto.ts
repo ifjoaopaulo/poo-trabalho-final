@@ -1,7 +1,7 @@
-import { IsString, IsNotEmpty, MaxLength } from "class-validator";
+import { IsString, IsNotEmpty, MaxLength, IsNumberString } from "class-validator";
 
 export class CriarClienteDto {
-  @IsString()
+  @IsNumberString()
   @IsNotEmpty()
   @MaxLength(11, { message: 'O CPF deve ter 11 digitos (somente números).' })
   cpf: string;

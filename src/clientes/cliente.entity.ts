@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, DeleteDateColumn } from 'typeorm';
 
 @Entity('clientes')
 export class Cliente {
@@ -10,4 +10,7 @@ export class Cliente {
 
   @Column({ type: 'varchar', length: 100, nullable: false })
   nome: string;
+
+  @DeleteDateColumn()
+  apagadoEm: Date | null;
 }
