@@ -1,27 +1,29 @@
-import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
 import { PedidosService } from './pedidos.service';
+import { CriarPedidoDto } from './dto/criar-pedido.dto';
+import { Pedido } from './pedido.entity';
 
 @Controller('pedidos')
 export class PedidosController {
-  constructor(private readonly service: PedidosService) {}
+  constructor(private readonly service: PedidosService) { }
 
   @Post()
-  criar(@Body() body: any) {
-    return this.service.criar(body);
+  async criar(@Body() body: CriarPedidoDto): Promise<Pedido> {
+    return await this.service.criar(body);
   }
 
   @Get()
-  listar() {
-    return this.service.listar();
+  async listar(): Promise<Pedido[]> {
+    return await this.service.listar();
   }
 
-  @Get(':id')
-  buscar(@Param('id') id: string) {
-    return this.service.buscar(Number(id));
+  @Get('clientes/:id')
+  async buscarPorCliente(@Param('id', ParseIntPipe) id: number): Promise<Pedido[]> {
+    return await this.service.buscarPorCliente(id);
   }
 
-  @Patch(':id')
-  atualizar(@Param('id') id: string, @Body() body: any) {
-    return this.service.atualizar(Number(id), body);
+  @Get('produtos/:id')
+  async buscarPorProduto(@Param('id', ParseIntPipe) id: number): Promise<Pedido[]> {
+    return await this.service.buscarPorProduto(id);
   }
 }
