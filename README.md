@@ -28,6 +28,10 @@ API desenvolvida em NestJS, usada para gravar pedidos detalhados (com dados do c
 
 **!!!** Para rodar, você precisa que o PostgreSQL já esteja rodando no seu sistema.
 
+``` bash
+npm install
+```
+
 Popule o banco de dados com os dados iniciais de teste:
 ``` bash
 npx ts-node src/seed.ts
