@@ -5,9 +5,9 @@ export class Cliente {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @Column({ type: 'varchar', length: 11 })
+  @Column({ type: 'varchar', length: 11, nullable: false })
   cpf: string;
 
-  @Column({ type: 'varchar', length: 100 })
+  @Column({ type: 'varchar', length: 100, nullable: false })
   nome: string;
 }
